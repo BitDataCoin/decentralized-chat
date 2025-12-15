@@ -43,14 +43,14 @@ netsh advfirewall firewall set rule name="Alice" new enable=no
 netsh advfirewall firewall set rule name="Bob" new enable=no
 
 ## Peer Connection Example
-Alice and Bob connect directly after obtaining each other's IP:
+Alice and Bob connect directly after obtaining each other's IP. From the secure_chat directory:
 
 **Alice's terminal:**
-python peer_secure_mobile.py Alice 9001 <BOB_IP> 9002 alice_privkey.pem alice_pubkey.pem <RELAY_IP> 8000
+python main.py Alice 9001 <BOB_IP> 9002 alice_privkey.pem alice_pubkey.pem <RELAY_IP> 8000
 
 
 **Bob's terminal:**
-python peer_secure_mobile.py Bob 9002 <ALICE_IP> 9001 bob_privkey.pem bob_pubkey.pem <RELAY_IP> 8000
+python main.py Bob 9002 <ALICE_IP> 9001 bob_privkey.pem bob_pubkey.pem <RELAY_IP> 8000
 
 Replace `<BOB_IP>`, `<ALICE_IP>`, and `<RELAY_IP>` with actual addresses. Relay enables direct secure chat or falls back transparently.
 
